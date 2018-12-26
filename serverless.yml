@@ -1,0 +1,24 @@
+
+service: gabechino
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+
+  stage: dev
+
+functions:
+  index:
+    handler: handler.index
+    events:
+      - http:
+          path: api/index
+          method: get
+  staticfiles:
+    handler: staticfiles.staticfile
+    events:
+      - http:
+          path: site/{url+}
+          method: get
+plugins:
+  - serverless-offline
