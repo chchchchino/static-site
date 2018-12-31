@@ -20,5 +20,20 @@ functions:
       - http:
           path: site/{url+}
           method: get
+  binary:
+    handler: staticfiles.binary
+    events:
+      - http:
+          path: site/img/{pathvar+}
+          method: get
+  
 plugins:
   - serverless-offline
+  - serverless-aws-static-file-handler/plugins/BinaryMediaTypes
+
+custom:
+  apiGateway:
+    binaryMediaTypes:
+      - "image/png"
+      - "image/jpeg"
+      

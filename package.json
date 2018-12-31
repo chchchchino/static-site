@@ -9,10 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "serverless-aws-static-file-handler": "^1.0.0"
+    "serverless-aws-static-file-handler": "^2.0.0"
   },
   "devDependencies": {
-    "serverless-aws-static-file-handler": "^1.0.0",
     "serverless-offline": "^3.31.3"
   }
 }
